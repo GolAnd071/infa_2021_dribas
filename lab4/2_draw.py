@@ -6,17 +6,16 @@ pygame.init()
 FPS = 30
 screen = pygame.display.set_mode((400, 400))
 
-def bg_bird():
-    pass
-
-def background():
-    pass
-
-def bird():
-    pass
-
-def fish():
-    pass
+x1 = 100; y1 = 100
+x2 = 300; y2 = 200
+N = 10
+color = (255, 255, 255)
+rect(screen, color, (x1, y1, x2 - x1, y2 - y1), 2)
+h = (x2 - x1) // (N + 1)
+x = x1 + h
+for i in range(N):
+    line(screen, color, (x, y1), (x, y2))
+    x += h
 
 pygame.display.update()
 clock = pygame.time.Clock()
