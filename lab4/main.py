@@ -31,39 +31,38 @@ def bg():
 
 # bird
 def bird_head():
+    #bird_head
+    #bird_eye
+    #bird_beak
     pass
 
 
-def bird_wing():
+def bird_wing(x, y, w, h, angle, orientation):
     pass
 
 
-def bird_paw():
+def bird_paw(x, y, w, h, angle, orientation):
     pass
 
 
-def bird():
+def bird(x, y, w, h, angle, orientation):
     pass
 
 
 # fish
-def fish_eye():
+def fish_eye(x, y, w, h, angle):
     pass
 
 
-def fish_head():
+def fish_fin(x, y, w, h, angle, orientation, curve):
     pass
 
 
-def fish_fin():
+def fish_body(x, y, w, h, angle, orientation):
     pass
 
 
-def fish_body():
-    pass
-
-
-def fish():
+def fish(x, y, w, h, angle, orientation):
     pass
 
 
