@@ -51,7 +51,7 @@ def bg():
 
 
 # bird
-def bird_tail(supersurf, x, y, w, h, angle, orientation):
+def bird_tail(supersurf, x, y, w, h, angle):
     surf = pygame.Surface((w, h), pygame.SRCALPHA)
     surf.fill((255, 255, 255, 0))
 
@@ -83,7 +83,7 @@ def bird_tail(supersurf, x, y, w, h, angle, orientation):
     supersurf.blit(pygame.transform.rotate(surf, angle), (x, y))
 
 
-def bird_wing(supersurf, x, y, w, h, angle, orientation):
+def bird_wing(supersurf, x, y, w, h, angle):
     surf = pygame.Surface((w, h), pygame.SRCALPHA)
     surf.fill((255, 255, 255, 0))
 
@@ -128,7 +128,7 @@ def bird_leg_ellipse(supersurf, x, y, w, h, angle):
     supersurf.blit(pygame.transform.rotate(surf, angle), (x, y))
 
 
-def bird_paw(supersurf, x, y, w, h, angle, orientation):
+def bird_paw(supersurf, x, y, w, h, angle):
     surf = pygame.Surface((w, h), pygame.SRCALPHA)
     surf.fill((255, 255, 255, 0))
 
@@ -173,7 +173,7 @@ def bird_paw(supersurf, x, y, w, h, angle, orientation):
     supersurf.blit(pygame.transform.rotate(surf, angle), (x, y))
 
 
-def bird_leg(supersurf, x, y, w, h, angle, orientation):
+def bird_leg(supersurf, x, y, w, h, angle):
     surf = pygame.Surface((w, h), pygame.SRCALPHA)
     surf.fill((255, 255, 255, 0))
 
@@ -181,12 +181,12 @@ def bird_leg(supersurf, x, y, w, h, angle, orientation):
     bird_leg_ellipse(surf, 0, 0, w * 0.4, h * 0.2, -60)
     bird_leg_ellipse(surf, w * 0.2, h * 0.4, w * 0.4, h * 0.15, -30)
     # paw
-    bird_paw(surf, w * 85 / 175, h * 115 / 175, w * 55 / 175, h * 65 / 175, 0, 0)
+    bird_paw(surf, w * 85 / 175, h * 115 / 175, w * 55 / 175, h * 65 / 175, 0)
 
     supersurf.blit(pygame.transform.rotate(surf, angle), (x, y))
 
 
-def bird_head_beak(supersurf, x, y, w, h, angle, orientation):
+def bird_head_beak(supersurf, x, y, w, h, angle):
     surf = pygame.Surface((w, h), pygame.SRCALPHA)
     surf.fill((255, 255, 255, 0))
 
@@ -218,12 +218,12 @@ def bird_head_beak(supersurf, x, y, w, h, angle, orientation):
     supersurf.blit(pygame.transform.rotate(surf, angle), (x, y))
 
 
-def bird_head(supersurf, x, y, w, h, angle, orientation):
+def bird_head(supersurf, x, y, w, h, angle):
     surf = pygame.Surface((w, h), pygame.SRCALPHA)
     surf.fill((255, 255, 255, 0))
 
     # bird_beak
-    bird_head_beak(surf, w * 144 / 220, h * 14 / 71, w * 74 / 220, h * 26 / 71, 0, 0)
+    bird_head_beak(surf, w * 144 / 220, h * 14 / 71, w * 74 / 220, h * 26 / 71, 0)
     # bird_head_body
     ellipse(surf, white, (0, h / 3, w / 2, h * 2 / 3))
     ellipse(surf, white, (w * 2 / 5, 0, w / 3, h * 2 / 3))
@@ -238,19 +238,19 @@ def bird(x, y, w, h, angle, orientation):
     surf.fill((255, 255, 255, 0))
 
     # tail
-    bird_tail(surf, w * 0.16, h * 0.4, w * 0.2, h * 0.2, 5, 0)
+    bird_tail(surf, w * 0.16, h * 0.4, w * 0.2, h * 0.2, 5)
     # wings
     wing_w = w * 2 / 5
     wing_h = h / 3
-    bird_wing(surf, w / 8, 0, wing_w, wing_h, -20, 0)
-    bird_wing(surf, w / 24, h / 6, wing_w, wing_h, 0, 0)
+    bird_wing(surf, w / 8, 0, wing_w, wing_h, -20)
+    bird_wing(surf, w / 24, h / 6, wing_w, wing_h, 0)
     # body
     ellipse(surf, white, (w * 0.3, h * 0.4, w * 0.4, h * 0.25))
     # legs
-    bird_leg(surf, w * 0.45, h * 0.45, w * 0.55, h * 0.5, 0, 0)
-    bird_leg(surf, w * 0.35, h * 0.5, w * 0.55, h * 0.5, 0, 0)
+    bird_leg(surf, w * 0.45, h * 0.45, w * 0.55, h * 0.5, 0)
+    bird_leg(surf, w * 0.35, h * 0.5, w * 0.55, h * 0.5, 0)
     # head
-    bird_head(surf, w * 2 / 3, h * 0.43, w / 3, h / 6, 0, 0)
+    bird_head(surf, w * 2 / 3, h * 0.43, w / 3, h / 6, 0)
 
     screen.blit(pygame.transform.rotate(surf, angle), (x, y))
 
