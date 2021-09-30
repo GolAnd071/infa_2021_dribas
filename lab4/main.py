@@ -252,6 +252,9 @@ def bird(x, y, w, h, angle, orientation):
     # head
     bird_head(surf, w * 2 / 3, h * 0.43, w / 3, h / 6, 0)
 
+    if orientation == 1:
+        surf = pygame.transform.flip(surf, True, False)
+
     screen.blit(pygame.transform.rotate(surf, angle), (x, y))
 
 
