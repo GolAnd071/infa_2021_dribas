@@ -53,9 +53,32 @@ def bg():
 # bird
 def bird_tail(supersurf, x, y, w, h, angle, orientation):
     surf = pygame.Surface((w, h), pygame.SRCALPHA)
-    surf.fill((255, 255, 255, 64))
+    surf.fill((255, 255, 255, 0))
 
-
+    points = ((w * 89 / 98, h * 121 / 121),
+              (w * 44 / 98, h * 116 / 121),
+              (w * 30 / 98, h * 110 / 121),
+              (w * 14 / 98, h * 105 / 121),
+              (w * 8 / 98, h * 103 / 121),
+              (w * 5 / 98, h * 100 / 121),
+              (w * 0 / 98, h * 96 / 121),
+              (w * 1 / 98, h * 83 / 121),
+              (w * 6 / 98, h * 69 / 121),
+              (w * 15 / 98, h * 46 / 121),
+              (w * 19 / 98, h * 33 / 121),
+              (w * 28 / 98, h * 19 / 121),
+              (w * 38 / 98, h * 12 / 121),
+              (w * 52 / 98, h * 3 / 121),
+              (w * 62 / 98, h * 5 / 121),
+              (w * 67 / 98, h * 14 / 121),
+              (w * 71 / 98, h * 35 / 121),
+              (w * 74 / 98, h * 47 / 121),
+              (w * 78 / 98, h * 59 / 121),
+              (w * 83 / 98, h * 71 / 121),
+              (w * 91 / 98, h * 80 / 121),
+              (w * 98 / 98, h * 87 / 121))
+    polygon(surf, white, points)
+    aalines(surf, black, False, points)
 
     supersurf.blit(pygame.transform.rotate(surf, angle), (x, y))
 
@@ -212,9 +235,10 @@ def bird_head(supersurf, x, y, w, h, angle, orientation):
 
 def bird(x, y, w, h, angle, orientation):
     surf = pygame.Surface((w, h), pygame.SRCALPHA)
-    surf.fill((255, 255, 255, 128))
+    surf.fill((255, 255, 255, 0))
 
     # tail
+    bird_tail(surf, w * 0.16, h * 0.4, w * 0.2, h * 0.2, 5, 0)
     # wings
     wing_w = w * 2 / 5
     wing_h = h / 3
