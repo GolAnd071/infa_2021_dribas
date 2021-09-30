@@ -300,6 +300,14 @@ def fish_body(supersurf, x, y, w, h, angle):
     surf = pygame.Surface((w, h), pygame.SRCALPHA)
     surf.fill((255, 255, 255, 64))
 
+    points1 = ()
+    points2 = ()
+    polygon(surf, fish_body_color, points1)
+    aalines(surf, black, False, points1)
+    polygon(surf, fish_body_color, points2)
+    aalines(surf, black, False, points2)
+
+
     supersurf.blit(pygame.transform.rotate(surf, angle), (x, y))
 
 
