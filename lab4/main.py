@@ -52,11 +52,21 @@ def bg():
     rect(screen, c5, ((0, h1 + h2 + h3 + h4), (window_w, h5)))
     rect(screen, c6, ((0, h1 + h2 + h3 + h4 + h5), (window_w, h6)))
     # birds
-    bird_w1 = window_w / 3
-    bird_h1 = window_h / 24
-    bg_bird(window_w / 10, window_h / 18, bird_w1, bird_h1, 30)
-    bg_bird(window_w * 3 / 5, window_h / 6, bird_w1, bird_h1, 0)
-    bg_bird(window_w / 5, window_h / 3, bird_w1, bird_h1, -10)
+    if second:
+        bird_w1 = window_w / 3
+        bird_h1 = window_h / 24
+        bg_bird(window_w / 10, window_h / 18, bird_w1, bird_h1, 30)
+        bg_bird(window_w * 3 / 5, window_h / 6, bird_w1, bird_h1, 0)
+        bg_bird(window_w / 5, window_h / 3, bird_w1, bird_h1, -10)
+
+        # bird_w2 = window_w / 9
+        # bird_h2 = window_h / 72
+    else:
+        bird_w1 = window_w / 3
+        bird_h1 = window_h / 24
+        bg_bird(window_w / 10, window_h / 18, bird_w1, bird_h1, 30)
+        bg_bird(window_w * 3 / 5, window_h / 6, bird_w1, bird_h1, 0)
+        bg_bird(window_w / 5, window_h / 3, bird_w1, bird_h1, -10)
 
 
 # bird
@@ -401,10 +411,18 @@ def fish(x, y, w, h, angle, orientation):
 
 
 bg()
-bird(window_w * 0.1, window_h * 0.5, window_w * 0.65, window_h * 0.35, 0, 0)
-fish(window_w * 0.6, window_h * 0.8, window_w * 0.25, window_h * 0.1, 0, 0)
 if second:
     pass
+    # bird(window_w * 0.1, window_h * 0.5, window_w * 0.65, window_h * 0.35, 0, 0)
+    # bird(window_w * 0.1, window_h * 0.5, window_w * 0.65, window_h * 0.35, 0, 1)
+    # bird(window_w * 0.1, window_h * 0.5, window_w * 0.65, window_h * 0.35, 0, 0)
+    # fish(window_w * 0.6, window_h * 0.8, window_w * 0.25, window_h * 0.1, 0, 0)
+    # fish(window_w * 0.6, window_h * 0.8, window_w * 0.25, window_h * 0.1, 0, 1)
+    # fish(window_w * 0.6, window_h * 0.8, window_w * 0.25, window_h * 0.1, 0, 0)
+else:
+    bird(window_w * 0.1, window_h * 0.5, window_w * 0.65, window_h * 0.35, 0, 0)
+    fish(window_w * 0.6, window_h * 0.8, window_w * 0.25, window_h * 0.1, 0, 0)
+
 
 pygame.display.update()
 clock = pygame.time.Clock()
