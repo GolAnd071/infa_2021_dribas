@@ -17,7 +17,7 @@ fish_eye_color_3 = (104, 157, 184)
 FPS = 30
 screen = pygame.display.set_mode((window_w, window_h))
 
-second = False
+second = True
 
 
 # background
@@ -59,8 +59,22 @@ def bg():
         bg_bird(window_w * 3 / 5, window_h / 6, bird_w1, bird_h1, 0)
         bg_bird(window_w / 5, window_h / 3, bird_w1, bird_h1, -10)
 
-        # bird_w2 = window_w / 9
-        # bird_h2 = window_h / 72
+        bird_w2 = window_w / 9
+        bird_h2 = window_h / 72
+        bg_bird(window_w * 0.45, window_h * 0.08, bird_w2, bird_h2, -10)
+        bg_bird(window_w * 0.55, window_h * 0.06, bird_w2, bird_h2, -15)
+        bg_bird(window_w * 0.53, window_h * 0.12, bird_w2, bird_h2, -10)
+        bg_bird(window_w * 0.5, window_h * 0.16, bird_w2, bird_h2, -10)
+        bg_bird(window_w * 0.4, window_h * 0.23, bird_w2, bird_h2, 15)
+        bg_bird(window_w * 0.35, window_h * 0.3, bird_w2, bird_h2, 15)
+        bg_bird(window_w * 0.49, window_h * 0.45, bird_w2, bird_h2, 5)
+
+        bird_w3 = window_w / 6
+        bird_h3 = window_h / 48
+        bg_bird(window_w * 0.95, window_h * 0.25, bird_w3, bird_h3, 0)
+        bg_bird(window_w * 0.75, window_h * 0.3, bird_w3, bird_h3, 0)
+        bg_bird(window_w * 0.85, window_h * 0.45, bird_w3, bird_h3, -5)
+
     else:
         bird_w1 = window_w / 3
         bird_h1 = window_h / 24
@@ -412,13 +426,12 @@ def fish(x, y, w, h, angle, orientation):
 
 bg()
 if second:
-    pass
-    # bird(window_w * 0.1, window_h * 0.5, window_w * 0.65, window_h * 0.35, 0, 0)
-    # bird(window_w * 0.1, window_h * 0.5, window_w * 0.65, window_h * 0.35, 0, 1)
-    # bird(window_w * 0.1, window_h * 0.5, window_w * 0.65, window_h * 0.35, 0, 0)
-    # fish(window_w * 0.6, window_h * 0.8, window_w * 0.25, window_h * 0.1, 0, 0)
-    # fish(window_w * 0.6, window_h * 0.8, window_w * 0.25, window_h * 0.1, 0, 1)
-    # fish(window_w * 0.6, window_h * 0.8, window_w * 0.25, window_h * 0.1, 0, 0)
+    bird(window_w * 0.05, window_h * 0.5, window_w * 0.65, window_h * 0.35, 0, 0)
+    bird(window_w * 0.45, window_h * 0.45, window_w * 0.65 * 0.25, window_h * 0.35 * 0.25, 0, 0)
+    bird(window_w * 0.8, window_h * 0.55, window_w * 0.65 * 0.3, window_h * 0.35 * 0.3, 0, 1)
+    fish(window_w * 0.7, window_h * 0.8, window_w * 0.25, window_h * 0.1, 0, 0)
+    fish(window_w * 0.75, window_h * 0.7, window_w * 0.25, window_h * 0.1, 0, 1)
+    fish(window_w * 0.2, window_h * 0.8, window_w * 0.25, window_h * 0.1, 0, 0)
 else:
     bird(window_w * 0.1, window_h * 0.5, window_w * 0.65, window_h * 0.35, 0, 0)
     fish(window_w * 0.6, window_h * 0.8, window_w * 0.25, window_h * 0.1, 0, 0)
