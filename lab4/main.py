@@ -20,7 +20,10 @@ screen = pygame.display.set_mode((window_w, window_h))
 second = True
 
 
-# background
+# Draws background for bird
+# x, y - start point
+# w, h - width, height
+# angle - angle of rotation
 def bg_bird(x, y, w, h, angle):
     surf = pygame.Surface((w, h), pygame.SRCALPHA)
     surf.fill((255, 255, 255, 0))
@@ -31,6 +34,7 @@ def bg_bird(x, y, w, h, angle):
     screen.blit(pygame.transform.rotate(surf, angle), (x, y))
 
 
+# Draws background
 def bg():
     # lines
     h1 = window_h * 0.1
@@ -83,7 +87,11 @@ def bg():
         bg_bird(window_w / 5, window_h / 3, bird_w1, bird_h1, -10)
 
 
-# bird
+# Draws bird tail
+# supersurf - surface for the bird
+# x, y - start point
+# w, h - width, height
+# angle - angle of rotation
 def bird_tail(supersurf, x, y, w, h, angle):
     surf = pygame.Surface((w, h), pygame.SRCALPHA)
     surf.fill((255, 255, 255, 0))
@@ -116,6 +124,11 @@ def bird_tail(supersurf, x, y, w, h, angle):
     supersurf.blit(pygame.transform.rotate(surf, angle), (x, y))
 
 
+# Draws bird wing
+# supersurf - surface for the bird
+# x, y - start point
+# w, h - width, height
+# angle - angle of rotation
 def bird_wing(supersurf, x, y, w, h, angle):
     surf = pygame.Surface((w, h), pygame.SRCALPHA)
     surf.fill((255, 255, 255, 0))
@@ -154,6 +167,11 @@ def bird_wing(supersurf, x, y, w, h, angle):
     supersurf.blit(pygame.transform.rotate(surf, angle), (x, y))
 
 
+# Draws bird leg as ellipse
+# supersurf - surface for the bird
+# x, y - start point
+# w, h - width, height
+# angle - angle of rotation
 def bird_leg_ellipse(supersurf, x, y, w, h, angle):
     surf = pygame.Surface((w, h), pygame.SRCALPHA)
     surf.fill((255, 255, 255, 0))
@@ -161,6 +179,11 @@ def bird_leg_ellipse(supersurf, x, y, w, h, angle):
     supersurf.blit(pygame.transform.rotate(surf, angle), (x, y))
 
 
+# Draws bird paw
+# supersurf - surface for the bird
+# x, y - start point
+# w, h - width, height
+# angle - angle of rotation
 def bird_paw(supersurf, x, y, w, h, angle):
     surf = pygame.Surface((w, h), pygame.SRCALPHA)
     surf.fill((255, 255, 255, 0))
@@ -206,6 +229,11 @@ def bird_paw(supersurf, x, y, w, h, angle):
     supersurf.blit(pygame.transform.rotate(surf, angle), (x, y))
 
 
+# Draws bird leg
+# supersurf - surface for the bird
+# x, y - start point
+# w, h - width, height
+# angle - angle of rotation
 def bird_leg(supersurf, x, y, w, h, angle):
     surf = pygame.Surface((w, h), pygame.SRCALPHA)
     surf.fill((255, 255, 255, 0))
@@ -219,6 +247,11 @@ def bird_leg(supersurf, x, y, w, h, angle):
     supersurf.blit(pygame.transform.rotate(surf, angle), (x, y))
 
 
+# Draws bird beak
+# supersurf - surface for the bird
+# x, y - start point
+# w, h - width, height
+# angle - angle of rotation
 def bird_head_beak(supersurf, x, y, w, h, angle):
     surf = pygame.Surface((w, h), pygame.SRCALPHA)
     surf.fill((255, 255, 255, 0))
@@ -251,6 +284,11 @@ def bird_head_beak(supersurf, x, y, w, h, angle):
     supersurf.blit(pygame.transform.rotate(surf, angle), (x, y))
 
 
+# Draws bird head
+# supersurf - surface for the bird
+# x, y - start point
+# w, h - width, height
+# angle - angle of rotation
 def bird_head(supersurf, x, y, w, h, angle):
     surf = pygame.Surface((w, h), pygame.SRCALPHA)
     surf.fill((255, 255, 255, 0))
@@ -266,6 +304,11 @@ def bird_head(supersurf, x, y, w, h, angle):
     supersurf.blit(pygame.transform.rotate(surf, angle), (x, y))
 
 
+# Draws bird
+# x, y - start point
+# w, h - width, height
+# angle - angle of rotation
+# orientation - horizontal orientation of the bird
 def bird(x, y, w, h, angle, orientation):
     surf = pygame.Surface((w, h), pygame.SRCALPHA)
     surf.fill((255, 255, 255, 0))
@@ -291,7 +334,11 @@ def bird(x, y, w, h, angle, orientation):
     screen.blit(pygame.transform.rotate(surf, angle), (x, y))
 
 
-# fish
+# Draws up of fish fin
+# supersurf - surface for the bird
+# x, y - start point
+# w, h - width, height
+# angle - angle of rotation
 def fish_fin_up(supersurf, x, y, w, h, angle):
     surf = pygame.Surface((w, h), pygame.SRCALPHA)
     surf.fill((255, 255, 255, 0))
@@ -313,6 +360,11 @@ def fish_fin_up(supersurf, x, y, w, h, angle):
     supersurf.blit(pygame.transform.rotate(surf, angle), (x, y))
 
 
+# Draws down left of fish fin
+# supersurf - surface for the bird
+# x, y - start point
+# w, h - width, height
+# angle - angle of rotation
 def fish_fin_down_left(supersurf, x, y, w, h, angle):
     surf = pygame.Surface((w, h), pygame.SRCALPHA)
     surf.fill((255, 255, 255, 0))
@@ -332,6 +384,11 @@ def fish_fin_down_left(supersurf, x, y, w, h, angle):
     supersurf.blit(pygame.transform.rotate(surf, angle), (x, y))
 
 
+# Draws down right of fish fin
+# supersurf - surface for the bird
+# x, y - start point
+# w, h - width, height
+# angle - angle of rotation
 def fish_fin_down_right(supersurf, x, y, w, h, angle):
     surf = pygame.Surface((w, h), pygame.SRCALPHA)
     surf.fill((255, 255, 255, 0))
@@ -351,6 +408,11 @@ def fish_fin_down_right(supersurf, x, y, w, h, angle):
     supersurf.blit(pygame.transform.rotate(surf, angle), (x, y))
 
 
+# Draws fish body
+# supersurf - surface for the bird
+# x, y - start point
+# w, h - width, height
+# angle - angle of rotation
 def fish_body(supersurf, x, y, w, h, angle):
     surf = pygame.Surface((w, h), pygame.SRCALPHA)
     surf.fill((255, 255, 255, 0))
@@ -387,6 +449,11 @@ def fish_body(supersurf, x, y, w, h, angle):
     supersurf.blit(pygame.transform.rotate(surf, angle), (x, y))
 
 
+# Draws fish eye as ellipse
+# supersurf - surface for the bird
+# x, y - start point
+# w, h - width, height
+# angle - angle of rotation
 def fish_eye_ellipse(supersurf, x, y, w, h, angle):
     surf = pygame.Surface((w, h), pygame.SRCALPHA)
     surf.fill((255, 255, 255, 0))
@@ -394,6 +461,11 @@ def fish_eye_ellipse(supersurf, x, y, w, h, angle):
     supersurf.blit(pygame.transform.rotate(surf, angle), (x, y))
 
 
+# Draws fish eye
+# supersurf - surface for the bird
+# x, y - start point
+# w, h - width, height
+# angle - angle of rotation
 def fish_eye(supersurf, x, y, w, h, angle):
     surf = pygame.Surface((w, h), pygame.SRCALPHA)
     surf.fill((255, 255, 255, 0))
@@ -405,6 +477,11 @@ def fish_eye(supersurf, x, y, w, h, angle):
     supersurf.blit(pygame.transform.rotate(surf, angle), (x, y))
 
 
+# Draws fish
+# supersurf - surface for the bird
+# x, y - start point
+# w, h - width, height
+# angle - angle of rotation
 def fish(x, y, w, h, angle, orientation):
     surf = pygame.Surface((w, h), pygame.SRCALPHA)
     surf.fill((255, 255, 255, 0))
